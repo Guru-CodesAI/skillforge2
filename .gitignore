@@ -1,0 +1,41 @@
+# Secrets
+.env
+.env.local
+.env.production
+*.key
+*.pem
+
+# Build outputs
+dist/
+build/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+node_modules/
+.next/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker
+*.env.docker
+
+# Coverage
+coverage/
+.coverage
+htmlcov/
