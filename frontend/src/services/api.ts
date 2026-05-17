@@ -136,8 +136,8 @@ export const dashboardService = {
 
 // ── Admin Services ────────────────────────────────────────────
 export const adminService = {
-  async getAllUsers(page = 1, search?: string) {
-    const { data } = await apiClient.get('/admin/users', { page, search });
+  async getAllUsers(page = 1, search?: string): Promise<any> {
+    const { data } = await apiClient.get<any>('/admin/users', { page, search });
     return data;
   },
 
@@ -156,13 +156,13 @@ export const adminService = {
     return data;
   },
 
-  async getSecurityLogs() {
-    const { data } = await apiClient.get('/admin/security-logs');
+  async getSecurityLogs(): Promise<any[]> {
+    const { data } = await apiClient.get<any[]>('/admin/security-logs');
     return data;
   },
 
-  async getPlatformStats() {
-    const { data } = await apiClient.get('/admin/stats');
+  async getPlatformStats(): Promise<any> {
+    const { data } = await apiClient.get<any>('/admin/stats');
     return data;
   },
 };
