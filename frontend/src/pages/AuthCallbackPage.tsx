@@ -37,7 +37,7 @@ export default function AuthCallbackPage() {
           .from('users')
           .select('experience_level, skills')
           .eq('id', data.session.user.id)
-          .single();
+          .maybeSingle();
 
         const isOnboarded =
           profile?.experience_level && (profile?.skills?.length ?? 0) > 0;

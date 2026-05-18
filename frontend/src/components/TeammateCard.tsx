@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -164,7 +165,20 @@ export default function TeammateCard({ match, index = 0 }: TeammatecardProps) {
           <ExternalLink className="w-3 h-3" />
           View Profile
         </Link>
-        <button className="flex-1 btn-primary text-xs py-2 flex items-center justify-center gap-1.5">
+        <button 
+          className="flex-1 btn-primary text-xs py-2 flex items-center justify-center gap-1.5"
+          onClick={(e) => {
+            e.stopPropagation();
+            if (user.github_username) {
+              toast.success(`Connection request sent to ${user.name}!`);
+              setTimeout(() => {
+                window.open(`https://github.com/${user.github_username}`, '_blank');
+              }, 1000);
+            } else {
+              toast.error(`Unable to connect: ${user.name} has not linked their GitHub account.`);
+            }
+          }}
+        >
           <MessageSquare className="w-3 h-3" />
           Connect
         </button>

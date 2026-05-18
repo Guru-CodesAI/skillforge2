@@ -47,7 +47,7 @@ export const useAuthStore = create<AuthState>()(
               .from('users')
               .select('*')
               .eq('id', session.user.id)
-              .single();
+              .maybeSingle();
 
             if (!error && profile) {
               set({
@@ -92,7 +92,7 @@ export const useAuthStore = create<AuthState>()(
               .from('users')
               .select('*')
               .eq('id', session.user.id)
-              .single();
+              .maybeSingle();
 
             if (profile) {
               set({
