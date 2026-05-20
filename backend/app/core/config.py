@@ -43,6 +43,7 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://skillforge.vercel.app",
+        "https://skillforge2-nine.vercel.app",
     ]
 
     # Rate Limiting
